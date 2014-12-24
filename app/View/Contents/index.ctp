@@ -4,8 +4,9 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			<th><?php echo $this->Paginator->sort('endpoint_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('title'); ?></th>
-			<th><?php echo $this->Paginator->sort('menu_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('logo_href'); ?></th>
 			<th><?php echo $this->Paginator->sort('slider'); ?></th>
 			<th><?php echo $this->Paginator->sort('social'); ?></th>
 			<th><?php echo $this->Paginator->sort('headline'); ?></th>
@@ -20,8 +21,9 @@
 	<?php foreach ($contents as $content): ?>
 	<tr>
 		<td><?php echo h($content['Content']['id']); ?>&nbsp;</td>
+		<td><?php echo h($content['Content']['endpoint_id']); ?>&nbsp;</td>
 		<td><?php echo h($content['Content']['title']); ?>&nbsp;</td>
-		<td><?php echo h($content['Content']['menu_id']); ?>&nbsp;</td>
+		<td><?php echo h($content['Content']['logo_href']); ?>&nbsp;</td>
 		<td><?php echo h($content['Content']['slider']); ?>&nbsp;</td>
 		<td><?php echo h($content['Content']['social']); ?>&nbsp;</td>
 		<td><?php echo h($content['Content']['headline']); ?>&nbsp;</td>

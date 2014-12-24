@@ -1,34 +1,17 @@
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <?php echo $this->Html->link('LanderSWC', '/', array('class' => 'navbar-brand')); ?> 
+          <a class="navbar-brand" href="#">Tempe Auto Body Shop</a>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><?php
-                echo $this->Html->link(
-                    'Endpoints',
-                    '/endpoints',
-                    array('class' => 'button')
-                ); ?></li>
-            <li><?php
-                echo $this->Html->link(
-                    'Contents',
-                    '/contents',
-                    array('class' => 'button')
-                ); ?></li>
-            <li><?php
-                echo $this->Html->link(
-                    'Menus',
-                    '/menus',
-                    array('class' => 'button')
-                ); ?></li>
-          </ul>
+        <div id="navbar" class="navbar-collapse collapse">
+          <?php echo $menu; // render nav menu ?>
         </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>

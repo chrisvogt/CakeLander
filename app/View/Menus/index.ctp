@@ -4,6 +4,7 @@
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			<th><?php echo $this->Paginator->sort('content_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('html'); ?></th>
 			<th><?php echo $this->Paginator->sort('location'); ?></th>
 			<th><?php echo $this->Paginator->sort('element'); ?></th>
@@ -16,6 +17,7 @@
 	<?php foreach ($menus as $menu): ?>
 	<tr>
 		<td><?php echo h($menu['Menu']['id']); ?>&nbsp;</td>
+		<td><?php echo h($menu['Menu']['content_id']); ?>&nbsp;</td>
 		<td><?php echo h($menu['Menu']['html']); ?>&nbsp;</td>
 		<td><?php echo h($menu['Menu']['location']); ?>&nbsp;</td>
 		<td><?php echo h($menu['Menu']['element']); ?>&nbsp;</td>

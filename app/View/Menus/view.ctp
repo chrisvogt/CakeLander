@@ -6,6 +6,11 @@
 			<?php echo h($menu['Menu']['id']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Content Id'); ?></dt>
+		<dd>
+			<?php echo h($menu['Menu']['content_id']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Html'); ?></dt>
 		<dd>
 			<?php echo h($menu['Menu']['html']); ?>

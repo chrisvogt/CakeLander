@@ -3,6 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Menu'); ?></legend>
 	<?php
+		echo $this->Form->input('content_id');
 		echo $this->Form->input('html');
 		echo $this->Form->input('location');
 		echo $this->Form->input('element');

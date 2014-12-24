@@ -5,7 +5,6 @@
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('url');
-		echo $this->Form->input('content_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

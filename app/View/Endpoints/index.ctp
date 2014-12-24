@@ -6,7 +6,6 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('url'); ?></th>
-			<th><?php echo $this->Paginator->sort('content_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -18,7 +17,6 @@
 		<td><?php echo h($endpoint['Endpoint']['id']); ?>&nbsp;</td>
 		<td><?php echo h($endpoint['Endpoint']['name']); ?>&nbsp;</td>
 		<td><?php echo h($endpoint['Endpoint']['url']); ?>&nbsp;</td>
-		<td><?php echo h($endpoint['Endpoint']['content_id']); ?>&nbsp;</td>
 		<td><?php echo h($endpoint['Endpoint']['created']); ?>&nbsp;</td>
 		<td><?php echo h($endpoint['Endpoint']['modified']); ?>&nbsp;</td>
 		<td class="actions">

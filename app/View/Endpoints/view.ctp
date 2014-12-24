@@ -16,11 +16,6 @@
 			<?php echo h($endpoint['Endpoint']['url']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Content Id'); ?></dt>
-		<dd>
-			<?php echo h($endpoint['Endpoint']['content_id']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Created'); ?></dt>
 		<dd>
 			<?php echo h($endpoint['Endpoint']['created']); ?>

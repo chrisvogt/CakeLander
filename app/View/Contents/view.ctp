@@ -6,14 +6,19 @@
 			<?php echo h($content['Content']['id']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Endpoint Id'); ?></dt>
+		<dd>
+			<?php echo h($content['Content']['endpoint_id']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Title'); ?></dt>
 		<dd>
 			<?php echo h($content['Content']['title']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Menu Id'); ?></dt>
+		<dt><?php echo __('Logo Href'); ?></dt>
 		<dd>
-			<?php echo h($content['Content']['menu_id']); ?>
+			<?php echo h($content['Content']['logo_href']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Slider'); ?></dt>

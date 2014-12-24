@@ -4,6 +4,7 @@
 		<legend><?php echo __('Edit Menu'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
+		echo $this->Form->input('content_id');
 		echo $this->Form->input('html');
 		echo $this->Form->input('location');
 		echo $this->Form->input('element');

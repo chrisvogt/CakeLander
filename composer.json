@@ -1,9 +1,9 @@
 {
-  "name": "chrisvogt/landerswc",
-  "description": "Landing page generator for SWC.",
+  "name": "chrisvogt/CakeLander",
+  "description": "Simple landing page generator for CakePHP.",
   "type": "project",
   "keywords" : ["landing page", "code generator"],
-  "homepage" : "https://bitbucket.org/CHR1SV0GT/landerswc",
+  "homepage" : "https://github.com/chrisvogt/CakeLander",
   "license" : "MIT",
   "require" : {
     "php" : ">=5.4",

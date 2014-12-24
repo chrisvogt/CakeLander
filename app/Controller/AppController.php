@@ -1,33 +1,20 @@
 <?php
-/**
- * Application level Controller
+/*
+ * This file is part of CakeLander.
  *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
+ * (c) 2014 CJ Vogt <mail@chrisvogt.me>
  *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 App::uses('Controller', 'Controller');
 App::uses('CrudControllerTrait', 'Crud.Lib');
 
 /**
  * Application Controller
  *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
+ * Application-wide methods, inherited by controllers
  *
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
@@ -35,8 +22,6 @@ App::uses('CrudControllerTrait', 'Crud.Lib');
 class AppController extends Controller {
 
 	use CrudControllerTrait;
-        
-#        public $scaffold;
 
 /**
  * List of global controller components
@@ -51,14 +36,7 @@ class AppController extends Controller {
 				'Crud.Api',
 				'Crud.ApiPagination',
 				'Crud.ApiQueryLog'
-			],
-                        'actions'   => [
-                            'Crud.Index',
-                            'Crud.Add',
-                            'Crud.Edit',
-                            'Crud.View',
-                            'Crud.Delete'
-                        ]
+			]
 		],
 		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
 	];

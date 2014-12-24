@@ -4,8 +4,9 @@
 		<legend><?php echo __('Edit Content'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
+		echo $this->Form->input('endpoint_id');
 		echo $this->Form->input('title');
-		echo $this->Form->input('menu_id');
+		echo $this->Form->input('logo_href');
 		echo $this->Form->input('slider');
 		echo $this->Form->input('social');
 		echo $this->Form->input('headline');
