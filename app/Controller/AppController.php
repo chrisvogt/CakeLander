@@ -35,6 +35,8 @@ App::uses('CrudControllerTrait', 'Crud.Lib');
 class AppController extends Controller {
 
 	use CrudControllerTrait;
+        
+#        public $scaffold;
 
 /**
  * List of global controller components
@@ -49,7 +51,14 @@ class AppController extends Controller {
 				'Crud.Api',
 				'Crud.ApiPagination',
 				'Crud.ApiQueryLog'
-			]
+			],
+                        'actions'   => [
+                            'Crud.Index',
+                            'Crud.Add',
+                            'Crud.Edit',
+                            'Crud.View',
+                            'Crud.Delete'
+                        ]
 		],
 		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
 	];
