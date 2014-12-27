@@ -22,6 +22,7 @@
  */
 
 App::uses('Model', 'Model');
+App::uses('CakeTime', 'Utility');
 
 /**
  * Application model for Cake.
@@ -46,5 +47,35 @@ class AppModel extends Model {
  * @var array
  */
 	public $actsAs = ['Containable'];
+        
+/**
+ * afterFind() override
+ * 
+ * @param mixed $results
+ * @param boolean $primary
+ * @return mixed
+ */
+        public function afterFind($results, $primary = false) {
+            return $this->_prettifyDates($results);
+        }
+        
+        /**
+         * Reformat date fields
+         * 
+         * @param mixed $results
+         * @uses CakeTime()
+         * @return mixed
+         */
+        protected function _prettifyDates($results) {
+            $datetime_fields = array('created', 'modified');
+            foreach ($datetime_fields as $needle) {
+                foreach ($results as $key => $val) {
+                    if (isset($val[key($val)][$needle])) {
+                        $results[$key][key($val)][$needle] = CakeTime::niceShort($val['Content'][$needle]);
+                    }
+                }
+            }
+            return $results;
+        }
 
 }

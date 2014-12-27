@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of CakeLander.
  *
@@ -32,10 +33,6 @@ class PagesController extends AppController {
      */
     public $uses = [];
 
-    public function beforeFilter() {
-        $this->layout = 'landerbs';
-    }
-
     /**
      * Displays a view
      *
@@ -61,11 +58,14 @@ class PagesController extends AppController {
             $title_for_layout = Inflector::humanize($path[$count - 1]);
         }
 
-        // call method to declade model relationships
-        $this->_setupModelsOnFly();
-
-        // call method to set the template content
-        $this->_setLanderData();
+        if ($page === 'home') { // landing page
+            $this->loadModel('Endpoint');
+            $this->Endpoint->recursive = '0';
+            $endpoint = $this->Endpoint->findByUrl(Router::fullBaseUrl());
+            if (isset($endpoint['Content'])) {
+                debug('The endpoint is set!');
+            }
+        }
 
         $this->set(compact('page', 'subpage', 'title_for_layout'));
 
@@ -80,67 +80,17 @@ class PagesController extends AppController {
         }
     }
 
-    protected function _getHost() {
-        return $_SERVER['HTTP_HOST'];
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->_determineLayout();
     }
 
-    /**
-     * Define model relationships on the fly
-     * 
-     * Probably a better way to do this; I need to research the CRUD plug-in
-     * @todo find a way to get rid of this method
-     */
-    protected function _setupModelsOnFly() {
-        $this->loadModel('Endpoint');
-        $this->Endpoint->recursive = 2;
-        $this->Endpoint->bindModel(
-                array('hasOne' => array(
-                        'Content' => array(
-                            'className' => 'Content'
-                        )
-                    )
-                )
-        );
-        $this->Endpoint->Content->bindModel(
-                array('hasOne' => array(
-                'Menu' => array(
-                    'className' => 'Menu'
-                )
-            )
-                ), array('belongsTo' => array(
-                'Endpoint' => array(
-                    'className' => 'Endpoint'
-                )
-            )
-                )
-        );
-        $this->Endpoint->Content->Menu->bindModel(
-                array('belongsTo' => array(
-                        'Content' => array(
-                            'className' => 'Content'
-                        )
-                    )
-                )
-        );
-    }
-
-    /**
-     * Method to load and set the landing page contents
-     */
-    protected function _setLanderData() {
-        $lander_data = $this->Endpoint->findByUrl($this->_getHost());
-        $content = $lander_data['Content'];
-
-        $this->set(array(
-            'menu' => $content['Menu']['html'],
-            'logo' => $content['logo_href'],
-            'slides' => $content['slider'],
-            'social' => $content['social'],
-            'headline' => $content['headline'],
-            'subhead' => $content['subhead'],
-            'body' => $content['body'],
-            'host_address' => $this->_getHost()
-        ));
+    protected function _determineLayout() {
+        if ($this->here === '/admin') {
+            $this->layout = 'admin';
+        } elseif ($this->here === '/') {
+            $this->layout = 'landerbs';
+        }
     }
 
 }

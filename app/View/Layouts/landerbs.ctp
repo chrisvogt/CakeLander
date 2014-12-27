@@ -18,7 +18,7 @@
   	<!-- Bootswatch CSS -->
   	<?php echo $this->Html->css(['bootstrap.min', 'main']); ?> 
         
-        <?php if ($logo) : ?> 
+        <?php if (isset($logo)) : ?> 
         <style>
             .navbar-brand {
                 background: url('<?php echo $logo; ?>');
@@ -35,11 +35,11 @@
 
   <body>
 
-    <?php echo $this->Element('navigation'); ?> 
+    <?php # echo $this->Element('navigation'); ?> 
 
-    <?php echo $this->Element('masthead/jumbotron'); ?> 
+    <?php # echo $this->Element('masthead/jumbotron'); ?> 
       
-    <?php echo $this->Element('masthead/social'); ?> 
+    <?php # echo $this->Element('masthead/social'); ?> 
       
     <div class="container">
 

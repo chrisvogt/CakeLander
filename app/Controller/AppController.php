@@ -9,7 +9,6 @@
  */
 
 App::uses('Controller', 'Controller');
-App::uses('CrudControllerTrait', 'Crud.Lib');
 
 /**
  * Application Controller
@@ -21,8 +20,6 @@ App::uses('CrudControllerTrait', 'Crud.Lib');
  */
 class AppController extends Controller {
 
-	use CrudControllerTrait;
-
 /**
  * List of global controller components
  *
@@ -30,15 +27,18 @@ class AppController extends Controller {
  */
 	public $components = [
 		'RequestHandler',
+  #              'DebugKit.Toolbar',
 		'Session',
-		'Crud.Crud' => [
-			'listeners' => [
-				'Crud.Api',
-				'Crud.ApiPagination',
-				'Crud.ApiQueryLog'
-			]
-		],
 		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
 	];
+        
+/**
+ * Admin scaffold layout
+ */
+        public function beforeFilter() {
+          if ($this->request->prefix == 'admin') {
+            $this->layout = 'admin';
+          } 
+        }
 
 }
