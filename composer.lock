@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "695b3278eec4087638f638ea0d2d5d2b",
+    "hash": "95e0a358a0262d938b993610bccbd54b",
     "packages": [
         {
             "name": "ad7six/dsn",
@@ -183,72 +183,6 @@
                 "zikula"
             ],
             "time": "2014-11-29 01:29:17"
-        },
-        {
-            "name": "friendsofcake/crud",
-            "version": "3.0.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FriendsOfCake/crud.git",
-                "reference": "0be86cd5e8c5b868a61da02093c3b6af2c50b61c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/0be86cd5e8c5b868a61da02093c3b6af2c50b61c",
-                "reference": "0be86cd5e8c5b868a61da02093c3b6af2c50b61c",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*"
-            },
-            "suggest": {
-                "cakedc/search": "If you want to use the Search Listener"
-            },
-            "type": "cakephp-plugin",
-            "extra": {
-                "installer-name": "Crud"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Winther",
-                    "homepage": "http://cakephp.nu/",
-                    "role": "Author"
-                },
-                {
-                    "name": "José Lorenzo Rodríguez",
-                    "homepage": "https://github.com/lorenzo",
-                    "role": "Contributor"
-                },
-                {
-                    "name": "Andy Dawson",
-                    "homepage": "https://github.com/ad7six",
-                    "role": "Contributor"
-                },
-                {
-                    "name": "ADmad",
-                    "homepage": "https://github.com/admad",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "CakePHP Application development on steroids - rapid prototyping / scaffolding & production ready code - XML / JSON APIs and more",
-            "homepage": "https://github.com/FriendsOfCake/crud",
-            "keywords": [
-                "bake",
-                "cake",
-                "cakephp",
-                "create",
-                "crud",
-                "delete",
-                "retrieve",
-                "scaffold",
-                "scaffolding",
-                "update"
-            ],
-            "time": "2013-12-11 12:54:51"
         },
         {
             "name": "josegonzalez/dotenv",
