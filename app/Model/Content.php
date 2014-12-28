@@ -66,20 +66,14 @@ class Content extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
-		'Menu' => array(
-			'className' => 'Menu',
-			'foreignKey' => 'content_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
+        
+        public $hasOne = array(
+            'Menu'  => array(
+                'className' => 'Menu',
+                'dependent' => true
+            )
+        );
         
 }

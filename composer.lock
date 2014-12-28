@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95e0a358a0262d938b993610bccbd54b",
+    "hash": "15339ef8aa043ad6e211f42b01f6f24b",
     "packages": [
         {
             "name": "ad7six/dsn",
@@ -185,6 +185,68 @@
             "time": "2014-11-29 01:29:17"
         },
         {
+            "name": "josegonzalez/cakephp-wysiwyg",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/josegonzalez/cakephp-wysiwyg.git",
+                "reference": "65f80afec44a2ef58f8104ad71d4b966ce66a652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/josegonzalez/cakephp-wysiwyg/zipball/65f80afec44a2ef58f8104ad71d4b966ce66a652",
+                "reference": "65f80afec44a2ef58f8104ad71d4b966ce66a652",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*"
+            },
+            "type": "cakephp-plugin",
+            "extra": {
+                "installer-name": "Wysiwyg"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rachman Chavik",
+                    "homepage": "https://github.com/rchavik",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Takashi Nojima",
+                    "homepage": "https://github.com/nojimage",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Paul Josephson",
+                    "homepage": "https://github.com/pjosephson",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "plugs",
+                    "homepage": "https://github.com/plugs",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Jose Diaz-Gonzalez",
+                    "email": "email@josediazgonzalez.com",
+                    "homepage": "http://josediazgonzalez.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "cakephp helper plugin for various wysiwyg editors",
+            "homepage": "http://github.com/josegonzalez/cakephp-wysiwyg",
+            "keywords": [
+                "cakephp",
+                "helper",
+                "wysiwyg"
+            ],
+            "time": "2014-03-19 08:47:15"
+        },
+        {
             "name": "josegonzalez/dotenv",
             "version": "0.3.0",
             "source": {
@@ -285,7 +347,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "josegonzalez/cakephp-wysiwyg": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

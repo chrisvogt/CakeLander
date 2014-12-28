@@ -56,6 +56,7 @@ class AppModel extends Model {
  * @return mixed
  */
         public function afterFind($results, $primary = false) {
+            parent::afterFind($results, $primary);
             return $this->_prettifyDates($results);
         }
         
@@ -71,7 +72,7 @@ class AppModel extends Model {
             foreach ($datetime_fields as $needle) {
                 foreach ($results as $key => $val) {
                     if (isset($val[key($val)][$needle])) {
-                        $results[$key][key($val)][$needle] = CakeTime::niceShort($val['Content'][$needle]);
+                        $results[$key][key($val)][$needle] = CakeTime::niceShort($val[key($val)][$needle]);
                     }
                 }
             }

@@ -15,6 +15,13 @@ class ContentsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Session');
+        
+/**
+ * Helpers
+ * 
+ * @var array
+ */
+        public $helpers = array('Wysiwyg.Wysiwyg' => array('_editor' => 'Markitup'));
 
 /**
  * admin_index method

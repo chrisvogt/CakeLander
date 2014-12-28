@@ -18,10 +18,10 @@
   	<!-- Bootswatch CSS -->
   	<?php echo $this->Html->css(['bootstrap.min', 'main']); ?> 
         
-        <?php if (isset($logo)) : ?> 
+        <?php if (isset($lander['logo_href'])) : ?> 
         <style>
             .navbar-brand {
-                background: url('<?php echo $logo; ?>');
+                background: url('<?php echo $lander['logo_href']; ?>');
             }
         </style>
         <?php endif; ?> 
@@ -35,11 +35,11 @@
 
   <body>
 
-    <?php # echo $this->Element('navigation'); ?> 
+    <?php echo $this->Element('navigation'); ?> 
 
-    <?php # echo $this->Element('masthead/jumbotron'); ?> 
+    <?php echo $this->Element('masthead/jumbotron'); ?> 
       
-    <?php # echo $this->Element('masthead/social'); ?> 
+    <?php echo $this->Element('masthead/social'); ?> 
       
     <div class="container">
 

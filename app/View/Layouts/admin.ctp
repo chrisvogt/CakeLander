@@ -12,7 +12,6 @@
         echo $this->Html->meta('icon');
         echo $this->fetch('meta');
         echo $this->fetch('css');
-        echo $this->fetch('script');
         ?>
         <?php echo $this->Html->css(['bootstrap.min', 'prettify-github']); ?> 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,5 +32,14 @@
             <?php echo $this->fetch('content'); ?>
         </div><!-- /.container -->
         <?php echo $this->Html->script(['vendor/jquery-1.11.1.min', 'vendor/bootstrap.min', 'vendor/run_prettify']); ?> 
+        <?php echo $this->fetch('script'); ?> 
+        <?php echo $this->Js->writeBuffer(); // Write cached scripts ?> 
+        <script>
+           $(document).ready(function() {
+              $(".markitup").markItUp(mySettings);
+           });
+        </script>
+        ...
+        <textarea></textarea>
     </body>
 </html>

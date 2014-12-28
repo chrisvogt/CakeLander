@@ -33,19 +33,19 @@
                 <?php echo $this->Form->input('logo_href', array('class' => 'form-control', 'placeholder' => 'Logo URL', 'label' => 'Logo URL')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('slider', array('class' => 'form-control', 'placeholder' => 'Slider')); ?>
+                <?php echo $this->Wysiwyg->input('slider', array('class' => 'markitup')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('social', array('class' => 'form-control', 'placeholder' => 'Social')); ?>
+                <?php echo $this->Wysiwyg->input('social', array('class' => 'markitup')); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->input('headline', array('class' => 'form-control', 'placeholder' => 'Headline')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('subhead', array('class' => 'form-control', 'placeholder' => 'Subhead')); ?>
+                <?php echo $this->Wysiwyg->input('subhead', array('class' => 'markitup')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('body', array('class' => 'form-control', 'placeholder' => 'Body')); ?>
+                <?php echo $this->Wysiwyg->input('body', array('class' => 'markitup')); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>

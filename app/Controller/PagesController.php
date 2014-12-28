@@ -60,10 +60,28 @@ class PagesController extends AppController {
 
         if ($page === 'home') { // landing page
             $this->loadModel('Endpoint');
+            $this->loadModel('Menu');
             $this->Endpoint->recursive = '0';
             $endpoint = $this->Endpoint->findByUrl(Router::fullBaseUrl());
+            $menu = $this->Menu->findByContentId($endpoint['Content']['id']);
             if (isset($endpoint['Content'])) {
-                debug('The endpoint is set!');
+                $this->set('lander', $endpoint['Content']);
+            }
+            if (isset($endpoint['Endpoint'])) {
+                $this->set('endpoint', $endpoint['Endpoint']);
+            }
+            if (isset($menu['Menu'])) {
+                $this->set('menu', $menu['Menu']['html']);
+            }
+            $endpoint = $this->Endpoint->findByUrl(Router::fullBaseUrl());
+            if (isset($endpoint['Content'])) {
+                $this->set('lander', $endpoint['Content']);
+            }
+            if (isset($endpoint['Endpoint'])) {
+                $this->set('endpoint', $endpoint['Endpoint']);
+            }
+            if (isset($endpoint['Menu'])) {
+                $this->set('menu', $endpoint['Content']['Menu']['html']);
             }
         }
 

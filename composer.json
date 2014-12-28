@@ -10,6 +10,7 @@
     "composer/installers" : "~1.0",
     "cakephp/cakephp" : "2.5.*",
     "josegonzalez/dotenv": "0.3.*",
+    "josegonzalez/cakephp-wysiwyg": "dev-master",
     "ad7six/dsn": "0.3.*"
   },
   "require-dev": {
