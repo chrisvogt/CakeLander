@@ -32,6 +32,8 @@ class AppController extends Controller {
 		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
 	];
         
+        public $helpers = array('Js');
+        
 /**
  * Admin scaffold layout
  */

@@ -1,5 +1,12 @@
 <?php
-
+/*
+ * This file is part of CakeLander.
+ *
+ * (c) 2014 CJ Vogt <mail@chrisvogt.me>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 App::uses('AppController', 'Controller');
 
 /**
@@ -11,30 +18,52 @@ App::uses('AppController', 'Controller');
  */
 class MenusController extends AppController {
 
-    /**
-     * Components
-     *
-     * @var array
-     */
+/**
+ * Components
+ *
+ * @var array
+ */
     public $components = array('Paginator', 'Session');
+    
+/**
+ * Helpers
+ * 
+ * @var array
+ */
+    public $helpers = array('Wysiwyg.Wysiwyg' => array('_editor' => 'Markitup'));
 
-    /**
-     * admin_index method
-     *
-     * @return void
-     */
+/**
+ * Markitup options
+ * 
+ * @var array
+ */
+    public $editorOptions = array('_buffer' => false, '_scriptBlock' => 'scriptBottom');
+
+/**
+ * beforeFilter override
+ */
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->set('editorOptions', $this->editorOptions);
+    }
+    
+/**
+ * admin_index method
+ *
+ * @return void
+ */
     public function admin_index() {
         $this->Menu->recursive = 0;
         $this->set('menus', $this->Paginator->paginate());
     }
 
-    /**
-     * admin_view method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
+/**
+ * admin_view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
     public function admin_view($id = null) {
         $this->Menu->recursive = 0;
         if (!$this->Menu->exists($id)) {
@@ -44,11 +73,11 @@ class MenusController extends AppController {
         $this->set('menu', $this->Menu->find('first', $options));
     }
 
-    /**
-     * admin_add method
-     *
-     * @return void
-     */
+/**
+ * admin_add method
+ *
+ * @return void
+ */
     public function admin_add() {
         $this->Menu->recursive = 0;
         if ($this->request->is('post')) {
@@ -64,13 +93,13 @@ class MenusController extends AppController {
         $this->set(compact('contents'));
     }
 
-    /**
-     * admin_edit method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
+/**
+ * admin_edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
     public function admin_edit($id = null) {
         $this->Menu->recursive = 0;
         if (!$this->Menu->exists($id)) {
@@ -91,13 +120,13 @@ class MenusController extends AppController {
         $this->set(compact('contents'));
     }
 
-    /**
-     * admin_delete method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
+/**
+ * admin_delete method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
     public function admin_delete($id = null) {
         $this->Menu->id = $id;
         if (!$this->Menu->exists()) {

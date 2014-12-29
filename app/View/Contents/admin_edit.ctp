@@ -33,19 +33,19 @@
                 <?php echo $this->Form->input('logo_href', array('class' => 'form-control', 'placeholder' => 'Logo URL', 'label' => 'Logo URL')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Wysiwyg->input('slider', array('class' => 'markitup')); ?>
+                <?php echo $this->Wysiwyg->input('slider', array('class' => 'markitup'), $editorOptions); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Wysiwyg->input('social', array('class' => 'markitup')); ?>
+                <?php echo $this->Wysiwyg->input('social', array('class' => 'markitup'), $editorOptions); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->input('headline', array('class' => 'form-control', 'placeholder' => 'Headline')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Wysiwyg->input('subhead', array('class' => 'markitup')); ?>
+                <?php echo $this->Wysiwyg->input('subhead', array('class' => 'markitup'), $editorOptions); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Wysiwyg->input('body', array('class' => 'markitup')); ?>
+                <?php echo $this->Wysiwyg->input('body', array('class' => 'markitup'), $editorOptions); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>
@@ -54,3 +54,4 @@
         </div><!-- end col md 10 -->
     </div><!-- end row -->
 </div>
+<?php echo $this->Js->buffer('$(".markitup").markItUp(mySettings);'); ?>

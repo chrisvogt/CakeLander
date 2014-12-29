@@ -29,7 +29,7 @@
                 <?php echo $this->Form->input('content_id', array('class' => 'form-control', 'placeholder' => 'Content Id')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('html', array('class' => 'form-control', 'placeholder' => 'Html')); ?>
+                <?php echo $this->Wysiwyg->input('html', array('class' => 'markitup'), $editorOptions); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->input('location', array('class' => 'form-control', 'placeholder' => 'Location')); ?>
@@ -46,3 +46,4 @@
         </div><!-- end col md 12 -->
     </div><!-- end row -->
 </div>
+<?php echo $this->Js->buffer('$(".markitup").markItUp(mySettings);'); ?>

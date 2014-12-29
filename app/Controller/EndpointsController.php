@@ -1,5 +1,12 @@
 <?php
-
+/*
+ * This file is part of CakeLander.
+ *
+ * (c) 2014 CJ Vogt <mail@chrisvogt.me>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 App::uses('AppController', 'Controller');
 
 /**
@@ -11,30 +18,30 @@ App::uses('AppController', 'Controller');
  */
 class EndpointsController extends AppController {
 
-    /**
-     * Components
-     *
-     * @var array
-     */
+/**
+ * Components
+ *
+ * @var array
+ */
     public $components = array('Paginator', 'Session');
 
-    /**
-     * admin_index method
-     *
-     * @return void
-     */
+/**
+ * admin_index method
+ *
+ * @return void
+ */
     public function admin_index() {
         $this->Endpoint->recursive = 0;
         $this->set('endpoints', $this->Paginator->paginate());
     }
 
-    /**
-     * admin_view method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
+/**
+ * admin_view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
     public function admin_view($id = null) {
         $this->Endpoint->recursive = 0;
         if (!$this->Endpoint->exists($id)) {
@@ -44,11 +51,11 @@ class EndpointsController extends AppController {
         $this->set('endpoint', $this->Endpoint->find('first', $options));
     }
 
-    /**
-     * admin_add method
-     *
-     * @return void
-     */
+/**
+ * admin_add method
+ *
+ * @return void
+ */
     public function admin_add() {
         $this->Endpoint->recursive = 0;
         if ($this->request->is('post')) {
@@ -64,13 +71,13 @@ class EndpointsController extends AppController {
         $this->set(compact('contents'));
     }
 
-    /**
-     * admin_edit method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
+/**
+ * admin_edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
     public function admin_edit($id = null) {
         $this->Endpoint->recursive = 0;
         if (!$this->Endpoint->exists($id)) {
@@ -91,13 +98,13 @@ class EndpointsController extends AppController {
         $this->set(compact('contents'));
     }
 
-    /**
-     * admin_delete method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
+/**
+ * admin_delete method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
     public function admin_delete($id = null) {
         $this->Endpoint->id = $id;
         if (!$this->Endpoint->exists()) {
