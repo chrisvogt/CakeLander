@@ -1,36 +1,40 @@
 {
-  "name": "chrisvogt/CakeLander",
-  "description": "Simple landing page generator for CakePHP.",
-  "type": "project",
-  "keywords" : ["landing page", "code generator"],
-  "homepage" : "https://github.com/chrisvogt/CakeLander",
-  "license" : "MIT",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/chrisvogt/cakephp-wysiwyg"
+    "name": "chrisvogt/CakeLander",
+    "description": "Simple landing page generator for CakePHP.",
+    "type": "project",
+    "keywords": ["landing page", "code generator"],
+    "homepage": "https://github.com/chrisvogt/CakeLander",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/chrisvogt/cakephp-wysiwyg"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0",
+        "cakephp/cakephp": "2.5.*",
+        "cakedc/users": "2.1.*",
+        "cakedc/utils": "1.4.*",
+        "jmillerdesign/mandrill": "dev-master",
+        "josegonzalez/dotenv": "0.3.*",
+        "josegonzalez/cakephp-wysiwyg": "dev-master",
+        "ad7six/dsn": "0.3.*",
+        "slywalker/boost_cake": "*"
+    },
+    "require-dev": {
+        "cakephp/debug_kit": "2.2.*"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "heroku": {
+            "framework": "cakephp2",
+            "document-root": "webroot",
+            "index-document": "index.php"
+        }
     }
-  ],
-  "require" : {
-    "php" : ">=5.4",
-    "composer/installers" : "~1.0",
-    "cakephp/cakephp" : "2.5.*",
-    "josegonzalez/dotenv": "0.3.*",
-    "josegonzalez/cakephp-wysiwyg": "dev-master",
-    "ad7six/dsn": "0.3.*"
-  },
-  "require-dev": {
-    "cakephp/debug_kit" : "2.2.*"
-  },
-  "minimum-stability": "dev",
-  "config": {
-    "preferred-install": "dist"
-  },
-  "extra": {
-    "heroku": {
-      "framework": "cakephp2",
-      "document-root": "webroot",
-      "index-document": "index.php"
-    }
-  }
 }

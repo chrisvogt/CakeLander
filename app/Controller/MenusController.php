@@ -23,18 +23,18 @@ class MenusController extends AppController {
  *
  * @var array
  */
-    public $components = array('Paginator', 'Session');
-    
+    public $components = array('Paginator', 'Session', 'Auth');
+
 /**
  * Helpers
- * 
+ *
  * @var array
  */
     public $helpers = array('Wysiwyg.Wysiwyg' => array('_editor' => 'Markitup'));
 
 /**
  * Markitup options
- * 
+ *
  * @var array
  */
     public $editorOptions = array('_buffer' => false, '_scriptBlock' => 'scriptBottom');
@@ -46,7 +46,7 @@ class MenusController extends AppController {
         parent::beforeFilter();
         $this->set('editorOptions', $this->editorOptions);
     }
-    
+
 /**
  * admin_index method
  *

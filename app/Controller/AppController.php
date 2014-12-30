@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of CakeLander.
  *
@@ -20,27 +21,38 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-/**
- * List of global controller components
- *
- * @var array
- */
-	public $components = [
-		'RequestHandler',
-  #              'DebugKit.Toolbar',
-		'Session',
-		'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
-	];
-        
-        public $helpers = array('Js');
-        
-/**
- * Admin scaffold layout
- */
-        public function beforeFilter() {
-          if ($this->request->prefix == 'admin') {
+    /**
+     * List of global controller components
+     *
+     * @var mixed
+     */
+    public $components = [
+        'RequestHandler',
+        'Session',
+        'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
+    ];
+
+    /**
+     * List of loaded helpers
+     *
+     * @var mixed
+     */
+    public $helpers = array(
+        'Session',
+        'Js',
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+    );
+
+    /**
+     * Admin scaffold layout
+     */
+    public function beforeFilter() {
+        if ($this->request->prefix == 'admin') {
             $this->layout = 'admin';
-          } 
         }
+        $this->set('bodyId', 'id="' . $this->params['action'] . '"');
+    }
 
 }

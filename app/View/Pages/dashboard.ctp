@@ -27,7 +27,7 @@
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-th-list"></i> Menus', '/admin/menus', array('escape' => false)); ?></li>
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-user"></i> Users', '/admin/users', array('escape' => false)); ?></li>
                   <li class="divider"></li>
-                  <li><a href="#"><i class="icon-share"></i> Logout</a></li>
+                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-off"></i> Logout', '/logout', array('escape' => false)); ?></li>
                 </ul>
             </div>
         </div>

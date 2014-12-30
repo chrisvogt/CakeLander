@@ -76,7 +76,13 @@ App::build(
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+CakePlugin::load('Users', array(
+    'routes' => false
+));
+CakePlugin::load('Utils');
 CakePlugin::load('Wysiwyg');
+CakePlugin::load('Mandrill');
+CakePlugin::load('BoostCake');
 
 if (php_sapi_name() !== 'cli' && Configure::read('debug') && in_array('DebugKit', App::objects('plugin'))) {
 	CakePlugin::load('DebugKit');
@@ -99,6 +105,13 @@ if (php_sapi_name() !== 'cli' && Configure::read('debug') && in_array('DebugKit'
 		$controller->Crud->addListener('DebugKit', 'Crud.DebugKit');
 	}, 'Controller.initialize');
 }
+
+/**
+ * Configure Mandrill for Users plug-in
+ */
+Configure::write('Users.emailConfig', 'mandrill');
+Configure::write('App.defaultEmail', 'mail@cakelander.com');
+Configure::write('Users.allowRegistration', false);
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter . By Default CakePHP bundles two filters:

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "40aa22fb54131f77982aa4b78a4bda5c",
+    "hash": "a649448061995619aadc8b33ab9d8fea",
     "packages": [
         {
             "name": "ad7six/dsn",
@@ -47,6 +47,89 @@
             ],
             "description": "A utility for parsing and generating service DSNs",
             "time": "2014-05-31 16:17:08"
+        },
+        {
+            "name": "cakedc/users",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CakeDC/users.git",
+                "reference": "9e25121b55d7e320de17660ade13af7526aa925c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CakeDC/users/zipball/9e25121b55d7e320de17660ade13af7526aa925c",
+                "reference": "9e25121b55d7e320de17660ade13af7526aa925c",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "php": ">=5.2.8"
+            },
+            "suggest": {
+                "cakedc/search": "Search functionality for the admin.",
+                "cakedc/utils": "If you want to generate slugs based on the username."
+            },
+            "type": "cakephp-plugin",
+            "extra": {
+                "installer-name": "Users"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cake Development Corporation",
+                    "email": "team@cakedc.com",
+                    "homepage": "http://cakedc.com"
+                }
+            ],
+            "description": "Users Plugin for CakePHP",
+            "homepage": "http://cakedc.com",
+            "keywords": [
+                "Users",
+                "auth",
+                "cakephp"
+            ],
+            "time": "2014-08-03 22:02:28"
+        },
+        {
+            "name": "cakedc/utils",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CakeDC/utils.git",
+                "reference": "ea48ed95b62517ddb046a46c17638726242121da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CakeDC/utils/zipball/ea48ed95b62517ddb046a46c17638726242121da",
+                "reference": "ea48ed95b62517ddb046a46c17638726242121da",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*"
+            },
+            "type": "cakephp-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cake Development Corporation",
+                    "email": "team@cakedc.com",
+                    "homepage": "http://cakedc.com"
+                }
+            ],
+            "description": "Utils Plugin for CakePHP",
+            "homepage": "http://cakedc.com",
+            "keywords": [
+                "cakephp",
+                "utility"
+            ],
+            "time": "2014-03-30 21:42:43"
         },
         {
             "name": "cakephp/cakephp",
@@ -185,6 +268,48 @@
             "time": "2014-11-29 01:29:17"
         },
         {
+            "name": "jmillerdesign/mandrill",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmillerdesign/MandrillTransport-CakePHP.git",
+                "reference": "8a831fe79f64e1f3e293f8f5cab0e6769acb3724"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmillerdesign/MandrillTransport-CakePHP/zipball/8a831fe79f64e1f3e293f8f5cab0e6769acb3724",
+                "reference": "8a831fe79f64e1f3e293f8f5cab0e6769acb3724",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "cakephp-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "J. Miller",
+                    "email": "j@jmillerdesign.com"
+                },
+                {
+                    "name": "Soroush Khanlou",
+                    "email": "soroush@khanlou.com"
+                }
+            ],
+            "description": "This enables using CakeEmail from CakePHP 2.x with Mandrill",
+            "homepage": "https://github.com/jmillerdesign/MandrillTransport-CakePHP/",
+            "keywords": [
+                "cakephp",
+                "mandrill",
+                "transport"
+            ],
+            "time": "2014-11-22 23:44:36"
+        },
+        {
             "name": "josegonzalez/cakephp-wysiwyg",
             "version": "dev-master",
             "source": {
@@ -296,6 +421,47 @@
                 "php"
             ],
             "time": "2014-05-28 14:40:35"
+        },
+        {
+            "name": "slywalker/boost_cake",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slywalker/cakephp-plugin-boost_cake.git",
+                "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slywalker/cakephp-plugin-boost_cake/zipball/bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
+                "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "twbs/bootstrap": "Bootstrap framework"
+            },
+            "type": "cakephp-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yasuo Harada",
+                    "email": "slywalker.net@gmail.com"
+                }
+            ],
+            "description": "BoostCake is a plugin for CakePHP using Bootstrap",
+            "homepage": "http://slywalker.github.io/cakephp-plugin-boost_cake/",
+            "keywords": [
+                "bootstrap",
+                "cakephp",
+                "twitter"
+            ],
+            "time": "2014-11-07 10:36:43"
         }
     ],
     "packages-dev": [
@@ -352,6 +518,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "jmillerdesign/mandrill": 20,
         "josegonzalez/cakephp-wysiwyg": 20
     },
     "prefer-stable": false,

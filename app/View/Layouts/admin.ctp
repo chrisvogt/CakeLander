@@ -28,7 +28,7 @@
             #flashMessage { margin-top: 14px; }
         </style>
     </head>
-    <body>
+    <body<?php echo ' ' . $bodyId; ?>>
         <?php echo $this->Element('admin_navigation'); ?>
         <div class="container-fluid">
             <?php echo $this->Session->flash(); ?>
