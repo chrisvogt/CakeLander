@@ -83,6 +83,20 @@ class PagesController extends AppController {
             }
         }
 
+        if ($page === 'dashboard') {
+            $this->loadModel('Endpoint');
+            $this->loadModel('Content');
+            $this->loadModel('Menu');
+            $this->loadModel('User');
+            $count = array(
+                'endpoints' => $this->Endpoint->find('count'),
+                'contents'  => $this->Content->find('count'),
+                'menus'     => $this->Menu->find('count'),
+                'users'     => $this->User->find('count')
+            );
+            $this->set('counts', $count);
+        }
+
         $this->set(compact('page', 'subpage', 'title_for_layout'));
 
         try {

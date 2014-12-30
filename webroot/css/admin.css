@@ -1,0 +1,18 @@
+.status .panel-title {
+    text-align: center;
+    font-size: 72px;
+    color: #fff;
+    line-height: 36px;
+    padding-top: 20px;
+}
+.forkme {
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+
+@media (max-width: 992px) { 
+    .forkme {
+        visibility: hidden;
+    }
+}
