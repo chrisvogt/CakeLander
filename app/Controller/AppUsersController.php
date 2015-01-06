@@ -45,7 +45,7 @@ class AppUsersController extends UsersController {
                 'class'     => 'alert-danger alert-auth'
             )
         );
-        $this->Auth->loginRedirect = '/admin';
+        $this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'display', 'dashboard');
         $this->Auth->logoutRedirect = '/';
         if ($this->request->action == 'register') {
                 $this->Components->disable('Auth');

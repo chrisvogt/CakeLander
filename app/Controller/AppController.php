@@ -49,7 +49,7 @@ class AppController extends Controller {
      * Admin scaffold layout
      */
     public function beforeFilter() {
-        if ($this->request->prefix == 'admin') {
+        if (AuthComponent::user()) {
             $this->layout = 'admin';
         }
         $this->set('bodyId', 'id="' . $this->params['action'] . '"');

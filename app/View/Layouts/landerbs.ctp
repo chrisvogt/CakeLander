@@ -14,17 +14,15 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+  	<?php echo $this->Html->css(['bootstrap.min', 'main']); ?>
 
-  	<!-- Bootswatch CSS -->
-  	<?php echo $this->Html->css(['bootstrap.min', 'main']); ?> 
-        
-        <?php if (isset($lander['logo_href'])) : ?> 
-        <style>
-            .navbar-brand {
-                background: url('<?php echo $lander['logo_href']; ?>');
-            }
-        </style>
-        <?php endif; ?> 
+    <?php if (isset($lander['logo_href'])) : ?>
+    <style>
+        .navbar-brand {
+            background: url('<?php echo $lander['logo_href']; ?>');
+        }
+    </style>
+    <?php endif; ?>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
