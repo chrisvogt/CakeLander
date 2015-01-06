@@ -18,8 +18,8 @@
         <?php if ( $this->Session->read('Auth.User') ) : ?>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><?php echo $this->Html->link('Contents', '/admin/contents'); ?> </li>
-            <li><?php echo $this->Html->link('Endpoints', '/admin/endpoints'); ?> </li>
+            <li><?php echo $this->Html->link('Landing Pages', '/admin/contents'); ?> </li>
+            <li><?php echo $this->Html->link('Routes', '/admin/routes'); ?> </li>
             <li><?php echo $this->Html->link('Menus', '/admin/menus'); ?> </li>
           </ul>
         </div><!--/.nav-collapse -->

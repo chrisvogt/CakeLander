@@ -5,14 +5,14 @@
                 <?php
                 echo $this->Html->link(
                     '<i class="glyphicon glyphicon-cloud"></i>',
-                    '/admin/endpoints',
+                    '/admin/routes',
                     array(
                         'escape' => false,
                         'class' => 'btn btn-default btn-lg btn-block panel-title'
                 )); ?> 
             </div>
             <div class="panel-body text-center">
-                <strong><?php echo $counts['endpoints']; ?> endpoints</strong>
+                <strong><?php echo $counts['routes']; ?> routes</strong>
             </div>
         </div>
     </div>

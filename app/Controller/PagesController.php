@@ -59,45 +59,47 @@ class PagesController extends AppController {
         }
 
         if ($page === 'home') { // landing page
-            $this->loadModel('Endpoint');
+            $this->loadModel('Route');
             $this->loadModel('Menu');
-            $this->Endpoint->recursive = '0';
-            $endpoint = $this->Endpoint->findByUrl(Router::fullBaseUrl());
+            $this->Route->recursive = '0';
+            $here = $this->Route->sanitizeUrl(Router::fullBaseUrl());
+            $route = $this->Route->findByDomain($here);
 
-            if (!$endpoint) {
+            if (!$route) {
                 throw new NotFoundException('Oops! Perhaps this domain hasn\'t been setup yet?');
             }
 
-            $menu = $this->Menu->findByContentId($endpoint['Content']['id']);
-            if (isset($endpoint['Content'])) {
-                $this->set('lander', $endpoint['Content']);
+            $menu = $this->Menu->findByContentId($route['Content']['id']);
+            if (isset($route['Content'])) {
+                $this->set('lander', $route['Content']);
             }
-            if (isset($endpoint['Endpoint'])) {
-                $this->set('endpoint', $endpoint['Endpoint']);
+            if (isset($route['Route'])) {
+                $this->set('route', $route['Route']);
             }
             if (isset($menu['Menu'])) {
                 $this->set('menu', $menu['Menu']['html']);
             }
-            $endpoint = $this->Endpoint->findByUrl(Router::fullBaseUrl());
-            if (isset($endpoint['Content'])) {
-                $this->set('lander', $endpoint['Content']);
+            $route = $this->Route->findByDomain(Router::fullBaseUrl());
+
+            if (isset($route['Content'])) {
+                $this->set('lander', $route['Content']);
             }
-            if (isset($endpoint['Endpoint'])) {
-                $this->set('endpoint', $endpoint['Endpoint']);
+            if (isset($route['Route'])) {
+                $this->set('route', $route['Route']);
             }
-            if (isset($endpoint['Menu'])) {
-                $this->set('menu', $endpoint['Content']['Menu']['html']);
+            if (isset($route['Menu'])) {
+                $this->set('menu', $route['Content']['Menu']['html']);
             }
         }
 
         if ($page === 'dashboard') {
             if ($this->Auth->user()) {
-                $this->loadModel('Endpoint');
+                $this->loadModel('Route');
                 $this->loadModel('Content');
                 $this->loadModel('Menu');
                 $this->loadModel('User');
                 $count = array(
-                    'endpoints' => $this->Endpoint->find('count'),
+                    'routes' => $this->Route->find('count'),
                     'contents'  => $this->Content->find('count'),
                     'menus'     => $this->Menu->find('count'),
                     'users'     => $this->User->find('count')

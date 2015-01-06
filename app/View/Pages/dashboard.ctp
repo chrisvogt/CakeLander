@@ -13,7 +13,7 @@
     <div class="col-md-6 col-md-offset-2">
         <h2>Welcome to CakeLander!</h2>
         <p class="lead">Congratulations on choosing CakeLander for your next landing page project!
-        <p>CakeLander was built as a quick and simple solution for managing landing pages and their contents. Attach <strong>contents</strong> to different <strong>endpoints</strong> to define the content presented on your pages. Build and connect <strong>menus</strong> to provide top navigation links away from your landing page.</p>
+        <p>CakeLander was built as a quick and simple solution for managing landing pages and their contents. Attach <strong>contents</strong> to different <strong>routes</strong> to define the content presented on your pages. Build and connect <strong>menus</strong> to provide top navigation links away from your landing page.</p>
         <p>You are using CakeLander <label class="label label-warning">v0.0.0</label>. This is a prerelease! This version of CakeLander is intended to be self-hosted on your own server, and is built on the CakePHP framework. If you are interested in learning more or contributing to the project be sure to check out <a href="https://github.com/chrisvogt/CakeLander" title="CakeLander on Github">CakeLander on Github</a>.
     </div>
     <div class="col-md-2">
@@ -22,7 +22,7 @@
                 <ul class="nav nav-list">
                   <li class="nav-header">Admin Menu</li>
                   <li class="active"><?php echo $this->Html->link('<i class="glyphicon glyphicon-dashboard"></i> Dashboard', '/admin', array('escape' => false)); ?></li>
-                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-cloud"></i> Endpoints <span class="badge badge-info">' . $counts['endpoints'] . '</span>', '/admin/endpoints', array('escape' => false)); ?></li>
+                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-cloud"></i> Routes <span class="badge badge-info">' . $counts['routes'] . '</span>', '/admin/routes', array('escape' => false)); ?></li>
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-edit"></i> Contents <span class="badge badge-info">' . $counts['contents'] . '</span>', '/admin/contents', array('escape' => false)); ?></li>
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-th-list"></i> Menus', '/admin/menus', array('escape' => false)); ?></li>
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-user"></i> Users', '/admin/users', array('escape' => false)); ?></li>
