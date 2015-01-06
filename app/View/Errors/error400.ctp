@@ -17,14 +17,25 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<h2><?php echo $name; ?></h2>
-<p class="error">
-	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
-	<?php printf(
-		__d('cake', 'The requested address %s was not found on this server.'),
-		"<strong>'{$url}'</strong>"
-	); ?>
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops! That page wasn't found.</h1>
+                <h2>
+                    404 Not Found</h2>
+                <div class="error-details">
+                    Perhaps the landing page you are looking for has't been setup yet?
+                </div>
+                <div class="error-actions">
+                	<?php # echo $this->Html->link('<span class="glyphicon glyphicon-home"></span> Take Me Home', '/', array('escape' => false, 'class' => 'btn btn-primary btn-lg')); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 if (Configure::read('debug') > 0):
 	echo $this->element('exception_stack_trace');

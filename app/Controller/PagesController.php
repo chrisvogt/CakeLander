@@ -63,6 +63,11 @@ class PagesController extends AppController {
             $this->loadModel('Menu');
             $this->Endpoint->recursive = '0';
             $endpoint = $this->Endpoint->findByUrl(Router::fullBaseUrl());
+
+            if (!$endpoint) {
+                throw new NotFoundException('Oops! Perhaps this domain hasn\'t been setup yet?');
+            }
+
             $menu = $this->Menu->findByContentId($endpoint['Content']['id']);
             if (isset($endpoint['Content'])) {
                 $this->set('lander', $endpoint['Content']);
