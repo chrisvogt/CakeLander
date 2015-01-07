@@ -12,7 +12,7 @@
                 )); ?> 
             </div>
             <div class="panel-body text-center">
-                <strong><?php echo $counts['routes']; ?> routes</strong>
+                <strong><?php echo $counts['routes']; ?> <?php echo __n('route', 'routes', $counts['routes']); ?></strong>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
                 )); ?> 
             </div>
             <div class="panel-body text-center">
-                <strong><?php echo $counts['contents']; ?> contents</strong>
+                <strong><?php echo $counts['contents']; ?> <?php echo __n('content', 'contents', $counts['contents']); ?></strong>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                 )); ?> 
             </div>
             <div class="panel-body text-center">
-                <strong><?php echo $counts['menus']; ?> menus</strong>
+                <strong><?php echo $counts['menus']; ?> <?php echo __n('menu', 'menus', $counts['menus']); ?></strong>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
                 )); ?> 
             </div>
             <div class="panel-body text-center">
-                <strong><?php echo $counts['users']; ?> users</strong>
+                <strong><?php echo $counts['users']; ?> <?php echo __n('user', 'users', $counts['users']); ?></strong>
             </div>
         </div>
     </div>
