@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Menu Model
+ * Slide Model
  *
  * @property LandingPage $LandingPage
  */
-class Menu extends AppModel {
+class Slide extends AppModel {
 
 /**
  * Validation rules
@@ -23,7 +23,7 @@ class Menu extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'html' => array(
+		'image' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',

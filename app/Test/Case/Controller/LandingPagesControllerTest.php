@@ -1,11 +1,11 @@
 <?php
-App::uses('MenusController', 'Controller');
+App::uses('LandingPagesController', 'Controller');
 
 /**
- * MenusController Test Case
+ * LandingPagesController Test Case
  *
  */
-class MenusControllerTest extends ControllerTestCase {
+class LandingPagesControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -13,9 +13,9 @@ class MenusControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.menu',
 		'app.landing_page',
-		'app.slide'
+		'app.menu',
+		'app.slides'
 	);
 
 /**

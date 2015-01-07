@@ -1,8 +1,8 @@
-<div class="routes index">
+<div class="landingPages index">
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">
-                <h1><?php echo __('Routes'); ?></h1>
+                <h1><?php echo __('Landing Pages'); ?></h1>
             </div>
         </div><!-- end col md 12 -->
     </div><!-- end row -->
@@ -14,19 +14,19 @@
                     <div class="panel-heading">Actions</div>
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
-                            <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Route'), array('action' => 'add'), array('escape' => false)); ?></li>
+                            <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Landing Page'), array('action' => 'add'), array('escape' => false)); ?></li>
                         </ul>
                     </div><!-- end body -->
                 </div><!-- end panel -->
             </div><!-- end actions -->
-        </div><!-- end col md 2 -->
+        </div><!-- end col md 3 -->
 
         <div class="col-md-10">
             <table cellpadding="0" cellspacing="0" class="table table-striped">
                 <thead>
                     <tr>
-                        <th><?php echo $this->Paginator->sort('content_id'); ?></th>
-                        <th><?php echo $this->Paginator->sort('name'); ?></th>
+                        <th><?php echo $this->Paginator->sort('id'); ?></th>
+                        <th><?php echo $this->Paginator->sort('title'); ?></th>
                         <th><?php echo $this->Paginator->sort('domain'); ?></th>
                         <th><?php echo $this->Paginator->sort('created'); ?></th>
                         <th><?php echo $this->Paginator->sort('modified'); ?></th>
@@ -34,22 +34,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($routes as $route): ?>
+                    <?php foreach ($landingPages as $landingPage): ?>
                         <tr>
-                            <td>
-                                <?php echo $this->Html->link($route['Content']['title'], array('controller' => 'contents', 'action' => 'view', $route['Content']['id'])); ?>
-                            </td>
-                            <td><?php echo h($route['Route']['name']); ?>&nbsp;</td>
-                            <td>
-                                <?php echo h($route['Route']['domain']); ?>
-                                <a href="<?php echo h($route['Route']['domain']); ?>" title="<?php echo h($route['Route']['name']); ?>" target="_new"><i class="glyphicon glyphicon-new-window">&nbsp;</i></a>
-                            </td>
-                            <td><?php echo h($route['Route']['created']); ?>&nbsp;</td>
-                            <td><?php echo h($route['Route']['modified']); ?>&nbsp;</td>
+                            <td><?php echo h($landingPage['LandingPage']['id']); ?>&nbsp;</td>
+                            <td><?php echo h($landingPage['LandingPage']['title']); ?>&nbsp;</td>
+                            <td><?php echo h($landingPage['LandingPage']['domain']); ?>&nbsp;</td>
+                            <td><?php echo h($landingPage['LandingPage']['created']); ?>&nbsp;</td>
+                            <td><?php echo h($landingPage['LandingPage']['modified']); ?>&nbsp;</td>
                             <td class="actions">
-                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $route['Route']['id']), array('escape' => false)); ?>
-                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $route['Route']['id']), array('escape' => false)); ?>
-                                <?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $route['Route']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $route['Route']['id'])); ?>
+                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-search"></span>', array('action' => 'view', $landingPage['LandingPage']['id']), array('escape' => false)); ?>
+                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'edit', $landingPage['LandingPage']['id']), array('escape' => false)); ?>
+                                <?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete', $landingPage['LandingPage']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $landingPage['LandingPage']['id'])); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -73,8 +68,7 @@
                 </ul>
             <?php } ?>
 
-        </div> <!-- end col md 10 -->
+        </div> <!-- end col md 9 -->
     </div><!-- end row -->
-
 
 </div><!-- end containing of content -->

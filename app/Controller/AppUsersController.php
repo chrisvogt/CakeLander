@@ -51,5 +51,5 @@ class AppUsersController extends UsersController {
                 $this->Components->disable('Auth');
         }
     }
-
+    
 }

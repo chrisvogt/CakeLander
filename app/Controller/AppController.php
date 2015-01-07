@@ -29,6 +29,7 @@ class AppController extends Controller {
     public $components = [
         'RequestHandler',
         'Session',
+        'Auth',
         'Paginator' => ['settings' => ['paramType' => 'querystring', 'limit' => 30]]
     ];
 

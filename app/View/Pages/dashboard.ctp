@@ -22,9 +22,7 @@
                 <ul class="nav nav-list">
                   <li class="nav-header">Admin Menu</li>
                   <li class="active"><?php echo $this->Html->link('<i class="glyphicon glyphicon-dashboard"></i> Dashboard', '/admin', array('escape' => false)); ?></li>
-                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-cloud"></i> Routes <span class="badge badge-info">' . $counts['routes'] . '</span>', '/admin/routes', array('escape' => false)); ?></li>
-                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-edit"></i> Contents <span class="badge badge-info">' . $counts['contents'] . '</span>', '/admin/contents', array('escape' => false)); ?></li>
-                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-th-list"></i> Menus', '/admin/menus', array('escape' => false)); ?></li>
+                  <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-list-alt"></i> Landing Pages <span class="badge badge-info">' . $counts['landing_pages'] . '</span>', array('controller' => 'landing_pages', 'action' => 'index', 'admin' => true), array('escape' => false)); ?></li>
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-user"></i> Users', '/admin/users', array('escape' => false)); ?></li>
                   <li class="divider"></li>
                   <li><?php echo $this->Html->link('<i class="glyphicon glyphicon-off"></i> Logout', '/logout', array('escape' => false)); ?></li>

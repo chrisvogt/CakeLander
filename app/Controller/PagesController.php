@@ -59,54 +59,30 @@ class PagesController extends AppController {
         }
 
         if ($page === 'home') { // landing page
-            $this->loadModel('Route');
-            $this->loadModel('Menu');
-            $this->Route->recursive = '0';
-            $here = $this->Route->sanitizeUrl(Router::fullBaseUrl());
-            $route = $this->Route->findByDomain($here);
-
-            if (!$route) {
+            $this->loadModel('LandingPage');
+            $this->LandingPage->recursive = '1';
+            
+            $here = $this->LandingPage->sanitizeUrl(Router::fullBaseUrl());
+            $landing_page = $this->LandingPage->findByDomain($here);
+            
+            if (!$landing_page) {
                 throw new NotFoundException('Oops! Perhaps this domain hasn\'t been setup yet?');
             }
 
-            $menu = $this->Menu->findByContentId($route['Content']['id']);
-            if (isset($route['Content'])) {
-                $this->set('lander', $route['Content']);
-            }
-            if (isset($route['Route'])) {
-                $this->set('route', $route['Route']);
-            }
-            if (isset($menu['Menu'])) {
-                $this->set('menu', $menu['Menu']['html']);
-            }
-            $route = $this->Route->findByDomain(Router::fullBaseUrl());
-
-            if (isset($route['Content'])) {
-                $this->set('lander', $route['Content']);
-            }
-            if (isset($route['Route'])) {
-                $this->set('route', $route['Route']);
-            }
-            if (isset($route['Menu'])) {
-                $this->set('menu', $route['Content']['Menu']['html']);
-            }
+            $this->set('landing_page', $landing_page);
         }
 
         if ($page === 'dashboard') {
             if ($this->Auth->user()) {
-                $this->loadModel('Route');
-                $this->loadModel('Content');
-                $this->loadModel('Menu');
+                $this->loadModel('LandingPage');
                 $this->loadModel('User');
                 $count = array(
-                    'routes' => $this->Route->find('count'),
-                    'contents'  => $this->Content->find('count'),
-                    'menus'     => $this->Menu->find('count'),
+                    'landing_pages' => $this->LandingPage->find('count'),
                     'users'     => $this->User->find('count')
                 );
                 $this->set('counts', $count);
             } else {
-                return $this->redirect('/users');
+                return $this->redirect('/login');
             }
         }
 

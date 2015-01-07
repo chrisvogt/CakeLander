@@ -8,10 +8,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><?php echo $lander['headline']; ?></a>
+          <a class="navbar-brand" href="/"><?php echo $landing_page['LandingPage']['headline']; ?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <?php echo $menu; // render nav menu ?>
+          <?php echo $landing_page['Menu']['html']; // render nav menu ?>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
