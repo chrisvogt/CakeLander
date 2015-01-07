@@ -43,14 +43,21 @@
                             <img src="<?php echo h($landingPage['LandingPage']['logo']); ?>" />
                             &nbsp;
                         </td>
-                    </tr><?php /*
+                    </tr>
                     <tr>
                         <th><?php echo __('Social'); ?></th>
                         <td>
-                            <?php echo h($landingPage['LandingPage']['social']); ?>
+                            <pre class="prettyprint lang-html"><?php echo h($landingPage['LandingPage']['social']); ?></pre>
                             &nbsp;
                         </td>
-                    </tr>*/ ?>
+                    </tr>
+                    <?php /**
+                    <tr>
+                        <th><?php echo __('Menu HTML'); ?></th>
+                        <td>
+                            <pre class="prettyprint lang-html"><?php echo h($landingPage['Menu']['html']); ?></pre>
+                        </td>
+                    </tr> */ ?>
                     <tr>
                         <th><?php echo __('Headline'); ?></th>
                         <td>
@@ -68,8 +75,7 @@
                     <tr>
                         <th><?php echo __('Body'); ?></th>
                         <td>
-                            <?php echo h($landingPage['LandingPage']['body']); ?>
-                            &nbsp;
+                            <pre class="prettyprint lang-html"><?php echo h($landingPage['LandingPage']['body']); ?></pre>
                         </td>
                     </tr>
                     <tr>
@@ -94,17 +100,6 @@
     </div>
 </div>
 
-<div class="row related">
-    <div class="col-md-12 col-md-offset-2">
-        <h3><?php echo __('Menu'); ?></h3>
-        <?php if (!empty($landingPage['Menu'])): ?>
-            <?php echo $landingPage['Menu']['html']; ?>
-        <?php endif; ?>
-        <div class="actions" style="clear: left;">
-            <?php echo $this->Html->link(__('Edit Menu'), array('controller' => 'menus', 'action' => 'edit', $landingPage['Menu']['id']), array('escape' => false, 'class' => 'btn btn-default')); ?>
-        </div>
-    </div><!-- end col md 12 -->
-</div>
 <div class="related row">
     <div class="col-md-10 col-md-offset-2">
         <h3><?php echo __('Slides'); ?></h3>

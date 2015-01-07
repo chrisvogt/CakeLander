@@ -32,10 +32,10 @@
                 <?php echo $this->Form->input('logo', array('class' => 'form-control', 'placeholder' => 'Logo')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('Menu.html', array('class' => 'form-control', 'placeholder' => 'Menu content', 'label' => 'Menu HTML')); ?>
+                <?php echo $this->Wysiwyg->input('Menu.html', array('placeholder' => 'Menu content'), $editorOptions); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('social', array('class' => 'form-control', 'placeholder' => 'Social', 'label' => 'Social HTML')); ?>
+                <?php echo $this->Wysiwyg->input('social', array('class' => 'markitup', 'placeholder' => 'Social', 'label' => 'Social HTML'), $editorOptions); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->input('headline', array('class' => 'form-control', 'placeholder' => 'Headline')); ?>
@@ -44,7 +44,7 @@
                 <?php echo $this->Form->input('subhead', array('class' => 'form-control', 'placeholder' => 'Subhead')); ?>
             </div>
             <div class="form-group">
-                <?php echo $this->Form->input('body', array('class' => 'form-control', 'placeholder' => 'Body', 'label' => 'Body HTML')); ?>
+                <?php echo $this->Wysiwyg->input('body', array('class' => 'markitup', 'placeholder' => 'Body', 'label' => 'Body HTML'), $editorOptions); ?>
             </div>
             <div class="form-group">
                 <?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-success')); ?>
@@ -55,3 +55,4 @@
         </div><!-- end col md 10 -->
     </div><!-- end row -->
 </div>
+<?php echo $this->Js->buffer('$(".markitup").markItUp(mySettings);'); ?>

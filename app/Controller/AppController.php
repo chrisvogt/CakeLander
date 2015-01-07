@@ -43,7 +43,7 @@ class AppController extends Controller {
         'Js',
         'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
         'Form' => array('className' => 'BoostCake.BoostCakeForm'),
-        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator')
     );
 
     /**
@@ -52,6 +52,8 @@ class AppController extends Controller {
     public function beforeFilter() {
         if (AuthComponent::user()) {
             $this->layout = 'admin';
+        } else {
+            $this->layout = 'landerbs';
         }
         $this->set('bodyId', 'id="' . $this->params['action'] . '"');
     }

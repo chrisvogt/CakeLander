@@ -9,18 +9,25 @@ App::uses('AppController', 'Controller');
 class LandingPagesController extends AppController {
 
 /**
- * Components
- *
- * @var array
- */
-	public $components = array('Paginator');
-
-/**
  * Helpers
  *
  * @var array
  */
     public $helpers = array('Wysiwyg.Wysiwyg' => array('_editor' => 'Markitup'));
+/**
+ * Markitup options
+ *
+ * @var array
+ */
+    public $editorOptions = array('_buffer' => false, '_scriptBlock' => 'scriptBottom');
+/**
+ * beforeFilter override
+ */
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->set('editorOptions', $this->editorOptions);
+    }
+
         
 /**
  * index method

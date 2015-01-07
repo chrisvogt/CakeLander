@@ -15,11 +15,11 @@
 		echo $this->fetch('script');
 	?>
   	<?php echo $this->Html->css(['bootstrap.min', 'main']); ?>
-
-    <?php if (isset($lander['logo_href'])) : ?>
+    
+    <?php if (isset($landing_page['LandingPage']['logo'])) : ?>
     <style>
         .navbar-brand {
-            background: url('<?php echo $lander['logo_href']; ?>');
+            background: url('<?php echo $landing_page['LandingPage']['logo']; ?>');
         }
     </style>
     <?php endif; ?>

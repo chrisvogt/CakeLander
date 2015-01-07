@@ -16,16 +16,6 @@ class MenusController extends AppController {
 	public $components = array('Paginator');
 
 /**
- * index method
- *
- * @return void
- */
-	public function admin_index() {
-		$this->Menu->recursive = 0;
-		$this->set('menus', $this->Paginator->paginate());
-	}
-
-/**
  * view method
  *
  * @throws NotFoundException
