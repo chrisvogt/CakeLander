@@ -3,6 +3,8 @@ CakeLander
 
 <a href="http://www.chrisvogt.me/projects/cakelander"><img src="http://res.cloudinary.com/chrisvogt/image/upload/v1419898403/projects/cakelander/cakelander344.png" align="right" hspace="0" vspace="0"></a>
 
+**EXPERIMENT / PRERELEASE**
+
 An open source landing page generator built on CakePHP. Use to host static landing pages for multiple domain names and subdomains in one easy-to-edit location.
 
 CakeLander is a hobby project built as a solution for a friend looking to host landing page content for a handful of parked domains that each need to contain their own unique body content while sharing a uniform theme, navigation menu, and style. Each landing page is capable of having a unique title, image slider, logo, menu, and body content.
